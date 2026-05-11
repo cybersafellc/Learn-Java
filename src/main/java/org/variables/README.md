@@ -28,3 +28,7 @@ z = 30;
 int x, y, z;
 x = y = z = 20;
 ```
+
+# Identifiers
+
+Many variable in java must be unique names. it is called ``identifiers``
