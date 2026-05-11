@@ -4,7 +4,7 @@ variable is container for stored a data
 
 # basics data type :
  - int
- - float
+ - double
  - char
  - boolean
  - String 
