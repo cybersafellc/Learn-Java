@@ -1,4 +1,4 @@
-package org.variables;
+package org.variables.practice;
 
 public class MultipleVariable {
     public static void main(String[] args){
