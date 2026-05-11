@@ -8,3 +8,7 @@ variable is container for stored a data
  - char
  - boolean
  - String 
+
+# print variable
+- System.out.print();
+- System.out.println();
