@@ -1,4 +1,4 @@
-package org.variables;
+package org.variables.practice;
 
 public class Variable {
     static void main() {
