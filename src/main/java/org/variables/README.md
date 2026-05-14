@@ -32,3 +32,11 @@ x = y = z = 20;
 # Identifiers
 
 Many variable in java must be unique names. it is called ``identifiers``
+
+# constants (final)
+
+Declare variable with the ``final`` keyword for constant variable
+
+```java
+final int MINUTE_PER_HOUR = 60;
+```
