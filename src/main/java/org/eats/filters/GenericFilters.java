@@ -46,6 +46,14 @@ public class GenericFilters implements Filter {
                 req.setAttribute("message", "Internal server error");
                 req.getRequestDispatcher("WEB-INF/views/error.jsp").forward(req, resp);
             }
+        } catch (Throwable e) {
+            e.printStackTrace();
+            if(!resp.isCommitted()){
+                resp.setStatus(500);
+                req.setAttribute("status", 500);
+                req.setAttribute("message", "Internal server error");
+                req.getRequestDispatcher("WEB-INF/views/error.jsp").forward(req, resp);
+            }
         }
     }
 

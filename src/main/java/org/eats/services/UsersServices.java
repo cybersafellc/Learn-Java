@@ -3,10 +3,9 @@ package org.eats.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eats.errors.ApiExceptions;
-import org.eats.models.Connections;
+import org.eats.repository.Connections;
+import org.eats.repository.models.Users;
 import org.eats.response.ResponseApi;
-
-import java.sql.ResultSet;
 
 public class UsersServices {
 
@@ -18,7 +17,7 @@ public class UsersServices {
     }
 
     public void init(){
-        this.database = new Connections();
+        this.database = new Connections(maper);
     }
 
     public ResponseApi register(String username, String password, String email, String name) throws JsonProcessingException {
@@ -27,8 +26,8 @@ public class UsersServices {
             throw new ApiExceptions(400, "username already exist");
         }
         database.createUsers(username, password, email, name);
-        ResultSet data = database.getUnique("users", "username", username);
-        return new ResponseApi(200, "successfully register", maper.writeValueAsString(data), null, false);
+        Users data = database.getUnique("users", "username", username);
+        return new ResponseApi(200, "successfully register", data, null, false);
     }
 
 

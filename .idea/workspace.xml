@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09e21487-567a-4e90-81c0-bb79b3bd4657" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/errors/ApiExceptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/errors/PagesExceptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/filters/GenericFilters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/models/Connections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/request/RegisterReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/response/ResponseApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/services/UsersServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/eats/controllers/TestingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eats/controllers/users/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eats/repository/models/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eats/filters/GenericFilters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eats/filters/GenericFilters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eats/models/Connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eats/repository/Connections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eats/services/UsersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eats/services/UsersServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

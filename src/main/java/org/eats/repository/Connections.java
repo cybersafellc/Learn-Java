@@ -1,6 +1,9 @@
-package org.eats.models;
+package org.eats.repository;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eats.errors.ApiExceptions;
+import org.eats.repository.models.Users;
 
 import java.sql.*;
 
@@ -8,12 +11,14 @@ public class Connections {
     private String username;
     private String password;
     private String host;
+    private ObjectMapper maper;
 
-    public Connections() {
+    public Connections(ObjectMapper maper) {
 
         this.username = System.getenv("USER_MYSQL");
         this.password = System.getenv("PASS_MYSQL");
         this.host = System.getenv("HOST_MYSQL");
+        this.maper = maper;
         setup();
     }
 
@@ -64,7 +69,7 @@ public class Connections {
         VALUES (?, ?, ?, ?)
         """;
         try(
-                Connection conn = DriverManager.getConnection(host, username, password);
+                Connection conn = DriverManager.getConnection(host, this.username, this.password);
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ) {
             ps.setString(1, email);
@@ -79,12 +84,13 @@ public class Connections {
         }
     }
 
-    public ResultSet getUnique(String table, String fields, String query){
+    public Users getUnique(String table, String fields, String query){
         String sql = """
         SELECT *
                 FROM {{table}}
         WHERE {{fields}} = ?
         """.replace("{{table}}", table).replace("{{fields}}", fields);
+        Users user = new Users();
 
         try(
                 Connection conn = DriverManager.getConnection(host, username, password);
@@ -94,10 +100,16 @@ public class Connections {
             ResultSet rs = ps.executeQuery();
 
             if(rs.next()){
-                return rs;
+                user.setId(rs.getString("id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setCreated_at(rs.getDate("created_at"));
+                user.setUpdated_at(rs.getDate("updated_at"));
             }
 
-            return rs;
+            return user;
         } catch (SQLException e) {
             throw new ApiExceptions(400,e.getMessage());
         }
