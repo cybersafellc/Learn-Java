@@ -11,14 +11,12 @@ public class Connections {
     private String username;
     private String password;
     private String host;
-    private ObjectMapper maper;
 
-    public Connections(ObjectMapper maper) {
+    public Connections() {
 
         this.username = System.getenv("USER_MYSQL");
         this.password = System.getenv("PASS_MYSQL");
         this.host = System.getenv("HOST_MYSQL");
-        this.maper = maper;
         setup();
     }
 

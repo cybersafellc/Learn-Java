@@ -10,14 +10,13 @@ import org.eats.response.ResponseApi;
 public class UsersServices {
 
     private Connections database;
-    private ObjectMapper maper;
 
-    public UsersServices(ObjectMapper maper){
-        this.maper = maper;
+    public UsersServices(){
+
     }
 
     public void init(){
-        this.database = new Connections(maper);
+        this.database = new Connections();
     }
 
     public ResponseApi register(String username, String password, String email, String name) throws JsonProcessingException {

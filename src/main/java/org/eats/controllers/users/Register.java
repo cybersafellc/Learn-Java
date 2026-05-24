@@ -45,8 +45,7 @@ public class Register extends HttpServlet {
     @Override
     public void init() throws ServletException {
         this.maper = new ObjectMapper();
-        this.usersServices = new UsersServices(maper);
+        this.usersServices = new UsersServices();
         usersServices.init();
-
     }
 }
